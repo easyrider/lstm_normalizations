@@ -1,0 +1,371 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BASIC	../src/ptb/ptb_word_lm.py	/^BASIC = "basic"$/;"	kind:variable	line:102
+BASICLSTMCell	../src/mnist/test_28*28.py	/^from src.normal_cells.lstm_basic import BASICLSTMCell$/;"	kind:namespace	line:17
+BASICLSTMCell	../src/mnist/test_784*1.py	/^from src.normal_cells.lstm_basic import BASICLSTMCell$/;"	kind:namespace	line:17
+BASICLSTMCell	../src/normal_cells/lstm_basic.py	/^class BASICLSTMCell(RNNCell):$/;"	kind:class	line:17
+BASICLSTMCell	../src/ptb/ptb_word_lm.py	/^from src.normal_cells.lstm_basic import BASICLSTMCell$/;"	kind:namespace	line:72
+BLOCK	../src/ptb/ptb_word_lm.py	/^BLOCK = "block"$/;"	kind:variable	line:110
+BNLSTMCell	../src/mnist/test_28*28.py	/^from normal_cells.lstm_bn_sep import BNLSTMCell$/;"	kind:namespace	line:9
+BNLSTMCell	../src/mnist/test_784*1.py	/^from normal_cells.lstm_bn_sep import BNLSTMCell$/;"	kind:namespace	line:9
+BNLSTMCell	../src/normal_cells/lstm_bn_sep.py	/^class BNLSTMCell(RNNCell):$/;"	kind:class	line:6
+BNLSTMCell	../src/ptb/ptb_word_lm.py	/^from src.normal_cells.lstm_bn_sep import BNLSTMCell$/;"	kind:namespace	line:73
+BN_SEP	../src/ptb/ptb_word_lm.py	/^BN_SEP = "bn_sep"$/;"	kind:variable	line:103
+CNLSTMCell	../src/mnist/test_28*28.py	/^from normal_cells.lstm_cn_sep import CNLSTMCell$/;"	kind:namespace	line:11
+CNLSTMCell	../src/mnist/test_784*1.py	/^from normal_cells.lstm_cn_sep import CNLSTMCell$/;"	kind:namespace	line:11
+CNLSTMCell	../src/normal_cells/lstm_cn_sep.py	/^class CNLSTMCell(RNNCell):$/;"	kind:class	line:18
+CNLSTMCell	../src/ptb/ptb_word_lm.py	/^from src.normal_cells.lstm_cn_sep import CNLSTMCell$/;"	kind:namespace	line:75
+CNSCALELSTMCell	../src/mnist/test_28*28.py	/^from normal_cells.lstm_cn_scale_input import CNSCALELSTMCell$/;"	kind:namespace	line:10
+CNSCALELSTMCell	../src/mnist/test_784*1.py	/^from normal_cells.lstm_cn_scale_input import CNSCALELSTMCell$/;"	kind:namespace	line:10
+CNSCALELSTMCell	../src/normal_cells/lstm_cn_scale_input.py	/^class CNSCALELSTMCell(RNNCell):$/;"	kind:class	line:17
+CNSCALELSTMCell	../src/ptb/ptb_word_lm.py	/^from src.normal_cells.lstm_cn_scale_input import CNSCALELSTMCell$/;"	kind:namespace	line:74
+CN_SCALE_SEP	../src/ptb/ptb_word_lm.py	/^CN_SCALE_SEP = "cn_scale_sep"$/;"	kind:variable	line:108
+CN_SEP	../src/ptb/ptb_word_lm.py	/^CN_SEP = "cn_sep"$/;"	kind:variable	line:104
+CUDNN	../src/ptb/ptb_word_lm.py	/^CUDNN = "cudnn"$/;"	kind:variable	line:109
+FLAGS	../src/mnist/test_28*28.py	/^FLAGS = None$/;"	kind:variable	line:31
+FLAGS	../src/mnist/test_784*1.py	/^FLAGS = None$/;"	kind:variable	line:31
+FLAGS	../src/ptb/ptb_word_lm.py	/^FLAGS = flags.FLAGS$/;"	kind:variable	line:101
+FLAGS	../src/ptb/util.py	/^FLAGS = tf.flags.FLAGS$/;"	kind:variable	line:25
+LNLSTMCell	../src/mnist/test_28*28.py	/^from normal_cells.lstm_ln_sep import LNLSTMCell$/;"	kind:namespace	line:12
+LNLSTMCell	../src/mnist/test_784*1.py	/^from normal_cells.lstm_ln_sep import LNLSTMCell$/;"	kind:namespace	line:12
+LNLSTMCell	../src/normal_cells/lstm_ln_sep.py	/^class LNLSTMCell(RNNCell):$/;"	kind:class	line:17
+LNLSTMCell	../src/ptb/ptb_word_lm.py	/^from src.normal_cells.lstm_ln_sep import LNLSTMCell$/;"	kind:namespace	line:76
+LN_SEP	../src/ptb/ptb_word_lm.py	/^LN_SEP = "ls_sep"$/;"	kind:variable	line:105
+LSTMStateTuple	../src/normal_cells/lstm_basic.py	/^from tensorflow.python.ops.rnn_cell import RNNCell, LSTMStateTuple$/;"	kind:namespace	line:3
+LSTMStateTuple	../src/normal_cells/lstm_cn_scale_input.py	/^from tensorflow.python.ops.rnn_cell import RNNCell, LSTMStateTuple$/;"	kind:namespace	line:3
+LSTMStateTuple	../src/normal_cells/lstm_cn_sep.py	/^from tensorflow.python.ops.rnn_cell import RNNCell, LSTMStateTuple$/;"	kind:namespace	line:4
+LSTMStateTuple	../src/normal_cells/lstm_ln_sep.py	/^from tensorflow.python.ops.rnn_cell_impl import RNNCell, LSTMStateTuple$/;"	kind:namespace	line:3
+LSTMStateTuple	../src/normal_cells/lstm_pcc_sep.py	/^from tensorflow.python.ops.rnn_cell import RNNCell, LSTMStateTuple$/;"	kind:namespace	line:3
+LSTMStateTuple	../src/normal_cells/lstm_wn_sep.py	/^from tensorflow.python.ops.rnn_cell import RNNCell, LSTMStateTuple$/;"	kind:namespace	line:3
+LargeConfig	../src/ptb/ptb_word_lm.py	/^class LargeConfig(object):$/;"	kind:class	line:395
+MediumConfig	../src/ptb/ptb_word_lm.py	/^class MediumConfig(object):$/;"	kind:class	line:378
+PCCLSTMCell	../src/mnist/test_28*28.py	/^from normal_cells.lstm_pcc_sep import PCCLSTMCell$/;"	kind:namespace	line:13
+PCCLSTMCell	../src/mnist/test_784*1.py	/^from normal_cells.lstm_pcc_sep import PCCLSTMCell$/;"	kind:namespace	line:13
+PCCLSTMCell	../src/normal_cells/lstm_pcc_sep.py	/^class PCCLSTMCell(RNNCell):$/;"	kind:class	line:17
+PCCLSTMCell	../src/ptb/ptb_word_lm.py	/^from src.normal_cells.lstm_pcc_sep import PCCLSTMCell$/;"	kind:namespace	line:77
+PCC_SEP	../src/ptb/ptb_word_lm.py	/^PCC_SEP = "pcc_sep"$/;"	kind:variable	line:107
+PTBInput	../src/ptb/ptb_word_lm.py	/^class PTBInput(object):$/;"	kind:class	line:127
+PTBModel	../src/ptb/ptb_word_lm.py	/^class PTBModel(object):$/;"	kind:class	line:138
+PtbReaderTest	../src/ptb/reader_test.py	/^class PtbReaderTest(tf.test.TestCase):$/;"	kind:class	line:29
+RNN	../src/mnist/test_28*28.py	/^	def RNN(x, weights, biases):$/;"	kind:function	line:66
+RNN	../src/mnist/test_784*1.py	/^	def RNN(x, weights, biases):$/;"	kind:function	line:64
+RNNCell	../src/normal_cells/lstm_basic.py	/^from tensorflow.python.ops.rnn_cell import RNNCell, LSTMStateTuple$/;"	kind:namespace	line:3
+RNNCell	../src/normal_cells/lstm_bn_sep.py	/^RNNCell = tf.nn.rnn_cell.RNNCell$/;"	kind:variable	line:3
+RNNCell	../src/normal_cells/lstm_cn_scale_input.py	/^from tensorflow.python.ops.rnn_cell import RNNCell, LSTMStateTuple$/;"	kind:namespace	line:3
+RNNCell	../src/normal_cells/lstm_cn_sep.py	/^from tensorflow.python.ops.rnn_cell import RNNCell, LSTMStateTuple$/;"	kind:namespace	line:4
+RNNCell	../src/normal_cells/lstm_ln_sep.py	/^from tensorflow.python.ops.rnn_cell_impl import RNNCell, LSTMStateTuple$/;"	kind:namespace	line:3
+RNNCell	../src/normal_cells/lstm_pcc_sep.py	/^from tensorflow.python.ops.rnn_cell import RNNCell, LSTMStateTuple$/;"	kind:namespace	line:3
+RNNCell	../src/normal_cells/lstm_wn_sep.py	/^from tensorflow.python.ops.rnn_cell import RNNCell, LSTMStateTuple$/;"	kind:namespace	line:3
+SmallConfig	../src/ptb/ptb_word_lm.py	/^class SmallConfig(object):$/;"	kind:class	line:361
+TestConfig	../src/ptb/ptb_word_lm.py	/^class TestConfig(object):$/;"	kind:class	line:412
+UpdateCollection	../src/ptb/util.py	/^class UpdateCollection(object):$/;"	kind:class	line:52
+WNLSTMCell	../src/mnist/test_28*28.py	/^from normal_cells.lstm_wn_sep import WNLSTMCell$/;"	kind:namespace	line:14
+WNLSTMCell	../src/mnist/test_784*1.py	/^from normal_cells.lstm_wn_sep import WNLSTMCell$/;"	kind:namespace	line:14
+WNLSTMCell	../src/normal_cells/lstm_wn_sep.py	/^class WNLSTMCell(RNNCell):$/;"	kind:class	line:17
+WNLSTMCell	../src/ptb/ptb_word_lm.py	/^from src.normal_cells.lstm_wn_sep import WNLSTMCell$/;"	kind:namespace	line:78
+WN_SEP	../src/ptb/ptb_word_lm.py	/^WN_SEP = "wn_sep"$/;"	kind:variable	line:106
+_BIAS_VARIABLE_NAME	../src/normal_cells/lstm_basic.py	/^_BIAS_VARIABLE_NAME = "bias"$/;"	kind:variable	line:13
+_BIAS_VARIABLE_NAME	../src/normal_cells/lstm_cn_scale_input.py	/^_BIAS_VARIABLE_NAME = "bias"$/;"	kind:variable	line:13
+_BIAS_VARIABLE_NAME	../src/normal_cells/lstm_cn_sep.py	/^_BIAS_VARIABLE_NAME = "bias"$/;"	kind:variable	line:14
+_BIAS_VARIABLE_NAME	../src/normal_cells/lstm_ln_sep.py	/^_BIAS_VARIABLE_NAME = "bias"$/;"	kind:variable	line:13
+_BIAS_VARIABLE_NAME	../src/normal_cells/lstm_pcc_sep.py	/^_BIAS_VARIABLE_NAME = "bias"$/;"	kind:variable	line:13
+_BIAS_VARIABLE_NAME	../src/normal_cells/lstm_wn_sep.py	/^_BIAS_VARIABLE_NAME = "bias"$/;"	kind:variable	line:13
+_WEIGHTS_VARIABLE_NAME	../src/normal_cells/lstm_basic.py	/^_WEIGHTS_VARIABLE_NAME = "kernel"$/;"	kind:variable	line:14
+_WEIGHTS_VARIABLE_NAME	../src/normal_cells/lstm_cn_scale_input.py	/^_WEIGHTS_VARIABLE_NAME = "kernel"$/;"	kind:variable	line:14
+_WEIGHTS_VARIABLE_NAME	../src/normal_cells/lstm_cn_sep.py	/^_WEIGHTS_VARIABLE_NAME = "kernel"$/;"	kind:variable	line:15
+_WEIGHTS_VARIABLE_NAME	../src/normal_cells/lstm_ln_sep.py	/^_WEIGHTS_VARIABLE_NAME = "kernel"$/;"	kind:variable	line:14
+_WEIGHTS_VARIABLE_NAME	../src/normal_cells/lstm_pcc_sep.py	/^_WEIGHTS_VARIABLE_NAME = "kernel"$/;"	kind:variable	line:14
+_WEIGHTS_VARIABLE_NAME	../src/normal_cells/lstm_wn_sep.py	/^_WEIGHTS_VARIABLE_NAME = "kernel"$/;"	kind:variable	line:14
+__call__	../src/normal_cells/lstm_bn_sep.py	/^    def __call__(self, x, state, scope=None):$/;"	kind:member	line:99
+__init__	../src/normal_cells/lstm_basic.py	/^    def __init__(self,$/;"	kind:member	line:18
+__init__	../src/normal_cells/lstm_bn_sep.py	/^    def __init__(self,$/;"	kind:member	line:9
+__init__	../src/normal_cells/lstm_cn_scale_input.py	/^    def __init__(self,$/;"	kind:member	line:18
+__init__	../src/normal_cells/lstm_cn_sep.py	/^    def __init__(self,$/;"	kind:member	line:19
+__init__	../src/normal_cells/lstm_ln_sep.py	/^    def __init__(self,$/;"	kind:member	line:18
+__init__	../src/normal_cells/lstm_pcc_sep.py	/^    def __init__(self,$/;"	kind:member	line:18
+__init__	../src/normal_cells/lstm_wn_sep.py	/^    def __init__(self,$/;"	kind:member	line:18
+__init__	../src/ptb/ptb_word_lm.py	/^	def __init__(self, config, data, name=None):$/;"	kind:member	line:130
+__init__	../src/ptb/ptb_word_lm.py	/^	def __init__(self, is_training, config, input_):$/;"	kind:member	line:141
+__init__	../src/ptb/util.py	/^  def __init__(self, metagraph, model):$/;"	kind:member	line:55
+__init__.py	../src/__init__.py	1;"	kind:file	line:1
+__init__.py	../src/mnist/__init__.py	1;"	kind:file	line:1
+__init__.py	../src/normal_cells/__init__.py	1;"	kind:file	line:1
+__init__.py	../src/ptb/__init__.py	1;"	kind:file	line:1
+_batch_norm	../src/normal_cells/lstm_bn_sep.py	/^    def _batch_norm(self,$/;"	kind:member	line:36
+_build_rnn_graph	../src/ptb/ptb_word_lm.py	/^	def _build_rnn_graph(self, inputs, config, is_training):$/;"	kind:member	line:198
+_build_rnn_graph_cudnn	../src/ptb/ptb_word_lm.py	/^	def _build_rnn_graph_cudnn(self, inputs, config, is_training):$/;"	kind:member	line:204
+_build_rnn_graph_lstm	../src/ptb/ptb_word_lm.py	/^	def _build_rnn_graph_lstm(self, inputs, config, is_training):$/;"	kind:member	line:246
+_build_vocab	../src/ptb/reader.py	/^def _build_vocab(filename):$/;"	kind:function	line:38
+_file_to_word_ids	../src/ptb/reader.py	/^def _file_to_word_ids(filename, word_to_id):$/;"	kind:function	line:50
+_get_lstm_cell	../src/ptb/ptb_word_lm.py	/^	def _get_lstm_cell(self, config, is_training):$/;"	kind:member	line:228
+_initializer	../src/normal_cells/lstm_basic.py	/^    def _initializer(shape, dtype=tf.float32, partition_info=None):$/;"	kind:function	line:126
+_initializer	../src/normal_cells/lstm_bn_sep.py	/^    def _initializer(shape, dtype=tf.float32, partition_info=None):$/;"	kind:function	line:132
+_initializer	../src/normal_cells/lstm_bn_sep.py	/^    def _initializer(shape, dtype=tf.float32, partition_info=None):$/;"	kind:function	line:146
+_initializer	../src/normal_cells/lstm_cn_scale_input.py	/^    def _initializer(shape, dtype=tf.float32, partition_info=None):$/;"	kind:function	line:158
+_initializer	../src/normal_cells/lstm_cn_sep.py	/^    def _initializer(shape, dtype=tf.float32, partition_info=None):$/;"	kind:function	line:155
+_initializer	../src/normal_cells/lstm_ln_sep.py	/^    def _initializer(shape, dtype=tf.float32, partition_info=None):$/;"	kind:function	line:150
+_initializer	../src/normal_cells/lstm_pcc_sep.py	/^    def _initializer(shape, dtype=tf.float32, partition_info=None):$/;"	kind:function	line:155
+_initializer	../src/normal_cells/lstm_wn_sep.py	/^    def _initializer(shape, dtype=tf.float32, partition_info=None):$/;"	kind:function	line:150
+_line_sep	../src/normal_cells/lstm_basic.py	/^def _line_sep(args,$/;"	kind:function	line:69
+_line_sep	../src/normal_cells/lstm_cn_scale_input.py	/^def _line_sep(args,$/;"	kind:function	line:70
+_line_sep	../src/normal_cells/lstm_cn_sep.py	/^def _line_sep(args,$/;"	kind:function	line:70
+_line_sep	../src/normal_cells/lstm_ln_sep.py	/^def _line_sep(args,$/;"	kind:function	line:71
+_line_sep	../src/normal_cells/lstm_pcc_sep.py	/^def _line_sep(args,$/;"	kind:function	line:70
+_line_sep	../src/normal_cells/lstm_wn_sep.py	/^def _line_sep(args,$/;"	kind:function	line:70
+_read_words	../src/ptb/reader.py	/^def _read_words(filename):$/;"	kind:function	line:30
+absolute_import	../src/mnist/test_28*28.py	/^from __future__ import absolute_import$/;"	kind:namespace	line:1
+absolute_import	../src/mnist/test_784*1.py	/^from __future__ import absolute_import$/;"	kind:namespace	line:1
+absolute_import	../src/ptb/__init__.py	/^from __future__ import absolute_import$/;"	kind:namespace	line:17
+absolute_import	../src/ptb/ptb_word_lm.py	/^from __future__ import absolute_import$/;"	kind:namespace	line:57
+absolute_import	../src/ptb/reader.py	/^from __future__ import absolute_import$/;"	kind:namespace	line:18
+absolute_import	../src/ptb/reader_test.py	/^from __future__ import absolute_import$/;"	kind:namespace	line:18
+absolute_import	../src/ptb/util.py	/^from __future__ import absolute_import$/;"	kind:namespace	line:16
+argparse	../src/mnist/test_28*28.py	/^import argparse$/;"	kind:namespace	line:5
+argparse	../src/mnist/test_784*1.py	/^import argparse$/;"	kind:namespace	line:5
+array_ops	../src/normal_cells/lstm_basic.py	/^from tensorflow.python.ops import array_ops$/;"	kind:namespace	line:6
+array_ops	../src/normal_cells/lstm_cn_scale_input.py	/^from tensorflow.python.ops import array_ops$/;"	kind:namespace	line:6
+array_ops	../src/normal_cells/lstm_cn_sep.py	/^from tensorflow.python.ops import array_ops$/;"	kind:namespace	line:7
+array_ops	../src/normal_cells/lstm_ln_sep.py	/^from tensorflow.python.ops import array_ops$/;"	kind:namespace	line:6
+array_ops	../src/normal_cells/lstm_pcc_sep.py	/^from tensorflow.python.ops import array_ops$/;"	kind:namespace	line:6
+array_ops	../src/normal_cells/lstm_wn_sep.py	/^from tensorflow.python.ops import array_ops$/;"	kind:namespace	line:6
+assign_lr	../src/ptb/ptb_word_lm.py	/^	def assign_lr(self, session, lr_value):$/;"	kind:member	line:284
+auto_parallel	../src/ptb/util.py	/^def auto_parallel(metagraph, model):$/;"	kind:function	line:88
+batch_size	../src/mnist/test_28*28.py	/^batch_size = 128$/;"	kind:variable	line:22
+batch_size	../src/mnist/test_784*1.py	/^batch_size = 128$/;"	kind:variable	line:22
+batch_size	../src/ptb/ptb_word_lm.py	/^	batch_size = 20$/;"	kind:variable	line:373
+batch_size	../src/ptb/ptb_word_lm.py	/^	batch_size = 20$/;"	kind:variable	line:390
+batch_size	../src/ptb/ptb_word_lm.py	/^	batch_size = 20$/;"	kind:variable	line:407
+batch_size	../src/ptb/ptb_word_lm.py	/^	batch_size = 20$/;"	kind:variable	line:424
+batch_statistics	../src/normal_cells/lstm_bn_sep.py	/^            def batch_statistics():$/;"	kind:function	line:76
+call	../src/normal_cells/lstm_basic.py	/^    def call(self, inputs, state):$/;"	kind:member	line:44
+call	../src/normal_cells/lstm_cn_scale_input.py	/^    def call(self, inputs, state):$/;"	kind:member	line:44
+call	../src/normal_cells/lstm_cn_sep.py	/^    def call(self, inputs, state):$/;"	kind:member	line:45
+call	../src/normal_cells/lstm_ln_sep.py	/^    def call(self, inputs, state):$/;"	kind:member	line:44
+call	../src/normal_cells/lstm_pcc_sep.py	/^    def call(self, inputs, state):$/;"	kind:member	line:44
+call	../src/normal_cells/lstm_wn_sep.py	/^    def call(self, inputs, state):$/;"	kind:member	line:44
+cell_dic	../src/ptb/ptb_word_lm.py	/^cell_dic = {$/;"	kind:variable	line:112
+collections	../src/ptb/reader.py	/^import collections$/;"	kind:namespace	line:22
+cosine_norm	../src/normal_cells/lstm_cn_scale_input.py	/^def cosine_norm(x, w, name='cosine_norm'):$/;"	kind:function	line:132
+cosine_norm	../src/normal_cells/lstm_cn_sep.py	/^def cosine_norm(x, w, name='cosine_norm'):$/;"	kind:function	line:130
+cost	../src/ptb/ptb_word_lm.py	/^	def cost(self):$/;"	kind:member	line:337
+data_type	../src/ptb/ptb_word_lm.py	/^def data_type():$/;"	kind:function	line:123
+device_lib	../src/ptb/ptb_word_lm.py	/^from tensorflow.python.client import device_lib$/;"	kind:namespace	line:69
+display_step	../src/mnist/test_28*28.py	/^display_step = 200$/;"	kind:variable	line:23
+display_step	../src/mnist/test_784*1.py	/^display_step = 200$/;"	kind:variable	line:23
+division	../src/mnist/test_28*28.py	/^from __future__ import division$/;"	kind:namespace	line:2
+division	../src/mnist/test_784*1.py	/^from __future__ import division$/;"	kind:namespace	line:2
+division	../src/ptb/__init__.py	/^from __future__ import division$/;"	kind:namespace	line:18
+division	../src/ptb/ptb_word_lm.py	/^from __future__ import division$/;"	kind:namespace	line:58
+division	../src/ptb/reader.py	/^from __future__ import division$/;"	kind:namespace	line:19
+division	../src/ptb/reader_test.py	/^from __future__ import division$/;"	kind:namespace	line:19
+division	../src/ptb/util.py	/^from __future__ import division$/;"	kind:namespace	line:17
+export_ops	../src/ptb/ptb_word_lm.py	/^	def export_ops(self, name):$/;"	kind:member	line:287
+export_state_tuples	../src/ptb/util.py	/^def export_state_tuples(state_tuples, name):$/;"	kind:function	line:28
+final_state	../src/ptb/ptb_word_lm.py	/^	def final_state(self):$/;"	kind:member	line:341
+final_state_name	../src/ptb/ptb_word_lm.py	/^	def final_state_name(self):$/;"	kind:member	line:357
+flags	../src/ptb/ptb_word_lm.py	/^flags = tf.flags$/;"	kind:variable	line:80
+get_config	../src/ptb/ptb_word_lm.py	/^def get_config():$/;"	kind:function	line:465
+hidden_size	../src/ptb/ptb_word_lm.py	/^	hidden_size = 1500$/;"	kind:variable	line:402
+hidden_size	../src/ptb/ptb_word_lm.py	/^	hidden_size = 2$/;"	kind:variable	line:419
+hidden_size	../src/ptb/ptb_word_lm.py	/^	hidden_size = 200$/;"	kind:variable	line:368
+hidden_size	../src/ptb/ptb_word_lm.py	/^	hidden_size = 650$/;"	kind:variable	line:385
+identity_initializer	../src/normal_cells/lstm_basic.py	/^def identity_initializer(scale):$/;"	kind:function	line:125
+identity_initializer	../src/normal_cells/lstm_bn_sep.py	/^def identity_initializer(scale):$/;"	kind:function	line:131
+identity_initializer	../src/normal_cells/lstm_cn_scale_input.py	/^def identity_initializer(scale):$/;"	kind:function	line:157
+identity_initializer	../src/normal_cells/lstm_cn_sep.py	/^def identity_initializer(scale):$/;"	kind:function	line:154
+identity_initializer	../src/normal_cells/lstm_ln_sep.py	/^def identity_initializer(scale):$/;"	kind:function	line:149
+identity_initializer	../src/normal_cells/lstm_pcc_sep.py	/^def identity_initializer(scale):$/;"	kind:function	line:154
+identity_initializer	../src/normal_cells/lstm_wn_sep.py	/^def identity_initializer(scale):$/;"	kind:function	line:149
+import_ops	../src/ptb/ptb_word_lm.py	/^	def import_ops(self):$/;"	kind:member	line:303
+import_state_tuples	../src/ptb/util.py	/^def import_state_tuples(state_tuples, name, num_replicas):$/;"	kind:function	line:34
+init_ops	../src/normal_cells/lstm_basic.py	/^from tensorflow.python.ops import init_ops$/;"	kind:namespace	line:10
+init_ops	../src/normal_cells/lstm_cn_scale_input.py	/^from tensorflow.python.ops import init_ops$/;"	kind:namespace	line:10
+init_ops	../src/normal_cells/lstm_cn_sep.py	/^from tensorflow.python.ops import init_ops$/;"	kind:namespace	line:11
+init_ops	../src/normal_cells/lstm_ln_sep.py	/^from tensorflow.python.ops import init_ops$/;"	kind:namespace	line:10
+init_ops	../src/normal_cells/lstm_pcc_sep.py	/^from tensorflow.python.ops import init_ops$/;"	kind:namespace	line:10
+init_ops	../src/normal_cells/lstm_wn_sep.py	/^from tensorflow.python.ops import init_ops$/;"	kind:namespace	line:10
+init_scale	../src/ptb/ptb_word_lm.py	/^	init_scale = 0.04$/;"	kind:variable	line:397
+init_scale	../src/ptb/ptb_word_lm.py	/^	init_scale = 0.05$/;"	kind:variable	line:380
+init_scale	../src/ptb/ptb_word_lm.py	/^	init_scale = 0.1$/;"	kind:variable	line:363
+init_scale	../src/ptb/ptb_word_lm.py	/^	init_scale = 0.1$/;"	kind:variable	line:414
+initial_state	../src/ptb/ptb_word_lm.py	/^	def initial_state(self):$/;"	kind:member	line:333
+initial_state_name	../src/ptb/ptb_word_lm.py	/^	def initial_state_name(self):$/;"	kind:member	line:353
+input	../src/ptb/ptb_word_lm.py	/^	def input(self):$/;"	kind:member	line:329
+input_data	../src/mnist/test_28*28.py	/^from tensorflow.examples.tutorials.mnist import input_data$/;"	kind:namespace	line:15
+input_data	../src/mnist/test_784*1.py	/^from tensorflow.examples.tutorials.mnist import input_data$/;"	kind:namespace	line:15
+keep_prob	../src/ptb/ptb_word_lm.py	/^	keep_prob = 0.35$/;"	kind:variable	line:405
+keep_prob	../src/ptb/ptb_word_lm.py	/^	keep_prob = 0.5$/;"	kind:variable	line:388
+keep_prob	../src/ptb/ptb_word_lm.py	/^	keep_prob = 1.0$/;"	kind:variable	line:371
+keep_prob	../src/ptb/ptb_word_lm.py	/^	keep_prob = 1.0$/;"	kind:variable	line:422
+layer_norm	../src/normal_cells/lstm_ln_sep.py	/^def layer_norm(inputs, epsilon=1e-7, scope=None):$/;"	kind:function	line:132
+learning_rate	../src/ptb/ptb_word_lm.py	/^	learning_rate = 1.0$/;"	kind:variable	line:364
+learning_rate	../src/ptb/ptb_word_lm.py	/^	learning_rate = 1.0$/;"	kind:variable	line:381
+learning_rate	../src/ptb/ptb_word_lm.py	/^	learning_rate = 1.0$/;"	kind:variable	line:398
+learning_rate	../src/ptb/ptb_word_lm.py	/^	learning_rate = 1.0$/;"	kind:variable	line:415
+logging	../src/normal_cells/lstm_basic.py	/^from tensorflow.python.platform import tf_logging as logging$/;"	kind:namespace	line:11
+logging	../src/normal_cells/lstm_cn_scale_input.py	/^from tensorflow.python.platform import tf_logging as logging$/;"	kind:namespace	line:11
+logging	../src/normal_cells/lstm_cn_sep.py	/^from tensorflow.python.platform import tf_logging as logging$/;"	kind:namespace	line:12
+logging	../src/normal_cells/lstm_ln_sep.py	/^from tensorflow.python.platform import tf_logging as logging$/;"	kind:namespace	line:11
+logging	../src/normal_cells/lstm_pcc_sep.py	/^from tensorflow.python.platform import tf_logging as logging$/;"	kind:namespace	line:11
+logging	../src/normal_cells/lstm_wn_sep.py	/^from tensorflow.python.platform import tf_logging as logging$/;"	kind:namespace	line:11
+logging	../src/ptb/ptb_word_lm.py	/^logging = tf.logging$/;"	kind:variable	line:81
+lr	../src/ptb/ptb_word_lm.py	/^	def lr(self):$/;"	kind:member	line:345
+lr_decay	../src/ptb/ptb_word_lm.py	/^	lr_decay = 0.5$/;"	kind:variable	line:372
+lr_decay	../src/ptb/ptb_word_lm.py	/^	lr_decay = 0.5$/;"	kind:variable	line:423
+lr_decay	../src/ptb/ptb_word_lm.py	/^	lr_decay = 0.8$/;"	kind:variable	line:389
+lr_decay	../src/ptb/ptb_word_lm.py	/^	lr_decay = 1 \/ 1.15$/;"	kind:variable	line:406
+lstm_basic.py	../src/normal_cells/lstm_basic.py	1;"	kind:file	line:1
+lstm_bn_sep.py	../src/normal_cells/lstm_bn_sep.py	1;"	kind:file	line:1
+lstm_cn_scale_input.py	../src/normal_cells/lstm_cn_scale_input.py	1;"	kind:file	line:1
+lstm_cn_sep.py	../src/normal_cells/lstm_cn_sep.py	1;"	kind:file	line:1
+lstm_ln_sep.py	../src/normal_cells/lstm_ln_sep.py	1;"	kind:file	line:1
+lstm_pcc_sep.py	../src/normal_cells/lstm_pcc_sep.py	1;"	kind:file	line:1
+lstm_wn_sep.py	../src/normal_cells/lstm_wn_sep.py	1;"	kind:file	line:1
+main	../src/mnist/test_28*28.py	/^def main(_):$/;"	kind:function	line:211
+main	../src/mnist/test_784*1.py	/^def main(_):$/;"	kind:function	line:193
+main	../src/ptb/ptb_word_lm.py	/^def main(_):$/;"	kind:function	line:489
+math_ops	../src/normal_cells/lstm_basic.py	/^from tensorflow.python.ops import math_ops$/;"	kind:namespace	line:5
+math_ops	../src/normal_cells/lstm_cn_scale_input.py	/^from tensorflow.python.ops import math_ops$/;"	kind:namespace	line:5
+math_ops	../src/normal_cells/lstm_cn_sep.py	/^from tensorflow.python.ops import math_ops$/;"	kind:namespace	line:6
+math_ops	../src/normal_cells/lstm_ln_sep.py	/^from tensorflow.python.ops import math_ops$/;"	kind:namespace	line:5
+math_ops	../src/normal_cells/lstm_pcc_sep.py	/^from tensorflow.python.ops import math_ops$/;"	kind:namespace	line:5
+math_ops	../src/normal_cells/lstm_wn_sep.py	/^from tensorflow.python.ops import math_ops$/;"	kind:namespace	line:5
+max_epoch	../src/ptb/ptb_word_lm.py	/^	max_epoch = 1$/;"	kind:variable	line:420
+max_epoch	../src/ptb/ptb_word_lm.py	/^	max_epoch = 14$/;"	kind:variable	line:403
+max_epoch	../src/ptb/ptb_word_lm.py	/^	max_epoch = 4$/;"	kind:variable	line:369
+max_epoch	../src/ptb/ptb_word_lm.py	/^	max_epoch = 6$/;"	kind:variable	line:386
+max_grad_norm	../src/ptb/ptb_word_lm.py	/^	max_grad_norm = 1$/;"	kind:variable	line:416
+max_grad_norm	../src/ptb/ptb_word_lm.py	/^	max_grad_norm = 10$/;"	kind:variable	line:399
+max_grad_norm	../src/ptb/ptb_word_lm.py	/^	max_grad_norm = 5$/;"	kind:variable	line:365
+max_grad_norm	../src/ptb/ptb_word_lm.py	/^	max_grad_norm = 5$/;"	kind:variable	line:382
+max_max_epoch	../src/ptb/ptb_word_lm.py	/^	max_max_epoch = 1$/;"	kind:variable	line:421
+max_max_epoch	../src/ptb/ptb_word_lm.py	/^	max_max_epoch = 13$/;"	kind:variable	line:370
+max_max_epoch	../src/ptb/ptb_word_lm.py	/^	max_max_epoch = 39$/;"	kind:variable	line:387
+max_max_epoch	../src/ptb/ptb_word_lm.py	/^	max_max_epoch = 55$/;"	kind:variable	line:404
+nest	../src/normal_cells/lstm_basic.py	/^from tensorflow.python.util import nest$/;"	kind:namespace	line:7
+nest	../src/normal_cells/lstm_cn_scale_input.py	/^from tensorflow.python.util import nest$/;"	kind:namespace	line:7
+nest	../src/normal_cells/lstm_cn_sep.py	/^from tensorflow.python.util import nest$/;"	kind:namespace	line:8
+nest	../src/normal_cells/lstm_ln_sep.py	/^from tensorflow.python.util import nest$/;"	kind:namespace	line:7
+nest	../src/normal_cells/lstm_pcc_sep.py	/^from tensorflow.python.util import nest$/;"	kind:namespace	line:7
+nest	../src/normal_cells/lstm_wn_sep.py	/^from tensorflow.python.util import nest$/;"	kind:namespace	line:7
+nn_ops	../src/normal_cells/lstm_basic.py	/^from tensorflow.python.ops import nn_ops$/;"	kind:namespace	line:9
+nn_ops	../src/normal_cells/lstm_cn_scale_input.py	/^from tensorflow.python.ops import nn_ops$/;"	kind:namespace	line:9
+nn_ops	../src/normal_cells/lstm_cn_sep.py	/^from tensorflow.python.ops import nn_ops$/;"	kind:namespace	line:10
+nn_ops	../src/normal_cells/lstm_ln_sep.py	/^from tensorflow.python.ops import nn_ops$/;"	kind:namespace	line:9
+nn_ops	../src/normal_cells/lstm_pcc_sep.py	/^from tensorflow.python.ops import nn_ops$/;"	kind:namespace	line:9
+nn_ops	../src/normal_cells/lstm_wn_sep.py	/^from tensorflow.python.ops import nn_ops$/;"	kind:namespace	line:9
+np	../src/normal_cells/lstm_basic.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../src/normal_cells/lstm_bn_sep.py	/^import tensorflow as tf, numpy as np$/;"	kind:namespace	line:2
+np	../src/normal_cells/lstm_cn_scale_input.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../src/normal_cells/lstm_cn_sep.py	/^import numpy as np$/;"	kind:namespace	line:2
+np	../src/normal_cells/lstm_ln_sep.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../src/normal_cells/lstm_pcc_sep.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../src/normal_cells/lstm_wn_sep.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../src/ptb/ptb_word_lm.py	/^import numpy as np$/;"	kind:namespace	line:63
+num_classes	../src/mnist/test_28*28.py	/^num_classes = 10  # MNIST total classes (0-9 digits)$/;"	kind:variable	line:29
+num_classes	../src/mnist/test_784*1.py	/^num_classes = 10  # MNIST total classes (0-9 digits)$/;"	kind:variable	line:29
+num_hidden	../src/mnist/test_28*28.py	/^num_hidden = 128  # hidden layer num of features$/;"	kind:variable	line:28
+num_hidden	../src/mnist/test_784*1.py	/^num_hidden = 128  # hidden layer num of features$/;"	kind:variable	line:28
+num_input	../src/mnist/test_28*28.py	/^num_input = 28  # MNIST data input (img shape: 28*28)$/;"	kind:variable	line:26
+num_input	../src/mnist/test_784*1.py	/^num_input = 1  # MNIST data input (img shape: 28*28)$/;"	kind:variable	line:26
+num_layers	../src/ptb/ptb_word_lm.py	/^	num_layers = 1$/;"	kind:variable	line:417
+num_layers	../src/ptb/ptb_word_lm.py	/^	num_layers = 2$/;"	kind:variable	line:366
+num_layers	../src/ptb/ptb_word_lm.py	/^	num_layers = 2$/;"	kind:variable	line:383
+num_layers	../src/ptb/ptb_word_lm.py	/^	num_layers = 2$/;"	kind:variable	line:400
+num_steps	../src/ptb/ptb_word_lm.py	/^	num_steps = 2$/;"	kind:variable	line:418
+num_steps	../src/ptb/ptb_word_lm.py	/^	num_steps = 20$/;"	kind:variable	line:367
+num_steps	../src/ptb/ptb_word_lm.py	/^	num_steps = 35$/;"	kind:variable	line:384
+num_steps	../src/ptb/ptb_word_lm.py	/^	num_steps = 35$/;"	kind:variable	line:401
+offset_initializer	../src/normal_cells/lstm_bn_sep.py	/^def offset_initializer():$/;"	kind:function	line:145
+os	../src/ptb/reader.py	/^import os$/;"	kind:namespace	line:23
+os	../src/ptb/reader_test.py	/^import os.path$/;"	kind:namespace	line:22
+output_size	../src/normal_cells/lstm_basic.py	/^    def output_size(self):$/;"	kind:member	line:41
+output_size	../src/normal_cells/lstm_bn_sep.py	/^    def output_size(self):$/;"	kind:member	line:33
+output_size	../src/normal_cells/lstm_cn_scale_input.py	/^    def output_size(self):$/;"	kind:member	line:41
+output_size	../src/normal_cells/lstm_cn_sep.py	/^    def output_size(self):$/;"	kind:member	line:42
+output_size	../src/normal_cells/lstm_ln_sep.py	/^    def output_size(self):$/;"	kind:member	line:41
+output_size	../src/normal_cells/lstm_pcc_sep.py	/^    def output_size(self):$/;"	kind:member	line:41
+output_size	../src/normal_cells/lstm_wn_sep.py	/^    def output_size(self):$/;"	kind:member	line:41
+path	../src/ptb/reader_test.py	/^import os.path$/;"	kind:namespace	line:22
+pcc_norm	../src/normal_cells/lstm_pcc_sep.py	/^def pcc_norm(x, w, name=None):$/;"	kind:function	line:128
+population_statistics	../src/normal_cells/lstm_bn_sep.py	/^            def population_statistics():$/;"	kind:function	line:88
+print_function	../src/mnist/test_28*28.py	/^from __future__ import print_function$/;"	kind:namespace	line:3
+print_function	../src/mnist/test_784*1.py	/^from __future__ import print_function$/;"	kind:namespace	line:3
+print_function	../src/ptb/__init__.py	/^from __future__ import print_function$/;"	kind:namespace	line:19
+print_function	../src/ptb/ptb_word_lm.py	/^from __future__ import print_function$/;"	kind:namespace	line:59
+print_function	../src/ptb/reader.py	/^from __future__ import print_function$/;"	kind:namespace	line:20
+print_function	../src/ptb/reader_test.py	/^from __future__ import print_function$/;"	kind:namespace	line:20
+print_function	../src/ptb/util.py	/^from __future__ import print_function$/;"	kind:namespace	line:18
+ptb_producer	../src/ptb/reader.py	/^def ptb_producer(raw_data, batch_size, num_steps, name=None):$/;"	kind:function	line:86
+ptb_raw_data	../src/ptb/reader.py	/^def ptb_raw_data(data_path=None):$/;"	kind:function	line:55
+ptb_word_lm.py	../src/ptb/ptb_word_lm.py	1;"	kind:file	line:1
+reader	../src/ptb/__init__.py	/^from src.ptb import reader$/;"	kind:namespace	line:22
+reader	../src/ptb/ptb_word_lm.py	/^from src.ptb import reader$/;"	kind:namespace	line:66
+reader	../src/ptb/reader_test.py	/^import reader$/;"	kind:namespace	line:26
+reader.py	../src/ptb/reader.py	1;"	kind:file	line:1
+reader_test.py	../src/ptb/reader_test.py	1;"	kind:file	line:1
+replicate_states	../src/ptb/util.py	/^  def replicate_states(self, state_coll_name):$/;"	kind:member	line:75
+rewriter_config_pb2	../src/ptb/util.py	/^from tensorflow.core.protobuf import rewriter_config_pb2$/;"	kind:namespace	line:23
+rnn_mode	../src/ptb/ptb_word_lm.py	/^	rnn_mode = BLOCK$/;"	kind:variable	line:392
+rnn_mode	../src/ptb/ptb_word_lm.py	/^	rnn_mode = BLOCK$/;"	kind:variable	line:409
+rnn_mode	../src/ptb/ptb_word_lm.py	/^	rnn_mode = BLOCK$/;"	kind:variable	line:426
+rnn_mode	../src/ptb/ptb_word_lm.py	/^	rnn_mode = CUDNN$/;"	kind:variable	line:375
+run	../src/mnist/test_28*28.py	/^def run():$/;"	kind:function	line:37
+run	../src/mnist/test_784*1.py	/^def run():$/;"	kind:function	line:34
+run_epoch	../src/ptb/ptb_word_lm.py	/^def run_epoch(session, model, eval_op=None, verbose=False):$/;"	kind:function	line:429
+setUp	../src/ptb/reader_test.py	/^  def setUp(self):$/;"	kind:member	line:31
+state_size	../src/normal_cells/lstm_basic.py	/^    def state_size(self):$/;"	kind:member	line:36
+state_size	../src/normal_cells/lstm_bn_sep.py	/^    def state_size(self):$/;"	kind:member	line:29
+state_size	../src/normal_cells/lstm_cn_scale_input.py	/^    def state_size(self):$/;"	kind:member	line:36
+state_size	../src/normal_cells/lstm_cn_sep.py	/^    def state_size(self):$/;"	kind:member	line:37
+state_size	../src/normal_cells/lstm_ln_sep.py	/^    def state_size(self):$/;"	kind:member	line:36
+state_size	../src/normal_cells/lstm_pcc_sep.py	/^    def state_size(self):$/;"	kind:member	line:36
+state_size	../src/normal_cells/lstm_wn_sep.py	/^    def state_size(self):$/;"	kind:member	line:36
+sys	../src/mnist/test_28*28.py	/^import sys$/;"	kind:namespace	line:6
+sys	../src/mnist/test_784*1.py	/^import sys$/;"	kind:namespace	line:6
+sys	../src/ptb/reader.py	/^import sys$/;"	kind:namespace	line:24
+testPtbProducer	../src/ptb/reader_test.py	/^  def testPtbProducer(self):$/;"	kind:member	line:47
+testPtbRawData	../src/ptb/reader_test.py	/^  def testPtbRawData(self):$/;"	kind:member	line:37
+test_28*28.py	../src/mnist/test_28*28.py	1;"	kind:file	line:1
+test_784*1.py	../src/mnist/test_784*1.py	1;"	kind:file	line:1
+tf	../src/mnist/test_28*28.py	/^import tensorflow as tf$/;"	kind:namespace	line:8
+tf	../src/mnist/test_784*1.py	/^import tensorflow as tf$/;"	kind:namespace	line:8
+tf	../src/normal_cells/lstm_basic.py	/^import tensorflow as tf$/;"	kind:namespace	line:2
+tf	../src/normal_cells/lstm_bn_sep.py	/^import tensorflow as tf, numpy as np$/;"	kind:namespace	line:2
+tf	../src/normal_cells/lstm_cn_scale_input.py	/^import tensorflow as tf$/;"	kind:namespace	line:2
+tf	../src/normal_cells/lstm_cn_sep.py	/^import tensorflow as tf$/;"	kind:namespace	line:1
+tf	../src/normal_cells/lstm_ln_sep.py	/^import tensorflow as tf$/;"	kind:namespace	line:2
+tf	../src/normal_cells/lstm_pcc_sep.py	/^import tensorflow as tf$/;"	kind:namespace	line:2
+tf	../src/normal_cells/lstm_wn_sep.py	/^import tensorflow as tf$/;"	kind:namespace	line:2
+tf	../src/ptb/ptb_word_lm.py	/^import tensorflow as tf$/;"	kind:namespace	line:64
+tf	../src/ptb/reader.py	/^import tensorflow as tf$/;"	kind:namespace	line:26
+tf	../src/ptb/reader_test.py	/^import tensorflow as tf$/;"	kind:namespace	line:24
+tf	../src/ptb/util.py	/^import tensorflow as tf$/;"	kind:namespace	line:20
+tf_debug	../src/ptb/ptb_word_lm.py	/^from tensorflow.python import debug as tf_debug$/;"	kind:namespace	line:70
+tf_optimizer	../src/ptb/util.py	/^  from tensorflow.python.grappler import tf_optimizer$/;"	kind:namespace	line:89
+time	../src/ptb/ptb_word_lm.py	/^import time$/;"	kind:namespace	line:62
+timesteps	../src/mnist/test_28*28.py	/^timesteps = 28  # timesteps$/;"	kind:variable	line:27
+timesteps	../src/mnist/test_784*1.py	/^timesteps = 784  # timesteps$/;"	kind:variable	line:27
+train_op	../src/ptb/ptb_word_lm.py	/^	def train_op(self):$/;"	kind:member	line:349
+update_snapshot_name	../src/ptb/util.py	/^  def update_snapshot_name(self, var_coll_name):$/;"	kind:member	line:62
+util	../src/ptb/__init__.py	/^from src.ptb import util$/;"	kind:namespace	line:23
+util	../src/ptb/ptb_word_lm.py	/^from src.ptb import util$/;"	kind:namespace	line:67
+util.py	../src/ptb/util.py	1;"	kind:file	line:1
+variable_pb2	../src/ptb/util.py	/^from tensorflow.core.framework import variable_pb2$/;"	kind:namespace	line:22
+vocab_size	../src/ptb/ptb_word_lm.py	/^	vocab_size = 10000$/;"	kind:variable	line:374
+vocab_size	../src/ptb/ptb_word_lm.py	/^	vocab_size = 10000$/;"	kind:variable	line:391
+vocab_size	../src/ptb/ptb_word_lm.py	/^	vocab_size = 10000$/;"	kind:variable	line:408
+vocab_size	../src/ptb/ptb_word_lm.py	/^	vocab_size = 10000$/;"	kind:variable	line:425
+vs	../src/normal_cells/lstm_basic.py	/^from tensorflow.python.ops import variable_scope as vs$/;"	kind:namespace	line:8
+vs	../src/normal_cells/lstm_cn_scale_input.py	/^from tensorflow.python.ops import variable_scope as vs$/;"	kind:namespace	line:8
+vs	../src/normal_cells/lstm_cn_sep.py	/^from tensorflow.python.ops import variable_scope as vs$/;"	kind:namespace	line:9
+vs	../src/normal_cells/lstm_ln_sep.py	/^from tensorflow.python.ops import variable_scope as vs$/;"	kind:namespace	line:8
+vs	../src/normal_cells/lstm_pcc_sep.py	/^from tensorflow.python.ops import variable_scope as vs$/;"	kind:namespace	line:8
+vs	../src/normal_cells/lstm_wn_sep.py	/^from tensorflow.python.ops import variable_scope as vs$/;"	kind:namespace	line:8
+weight_norm	../src/normal_cells/lstm_wn_sep.py	/^def weight_norm(x, V, scope='weight_norm'):$/;"	kind:function	line:128
+with_autoparallel_prefix	../src/ptb/util.py	/^def with_autoparallel_prefix(replica_id, name):$/;"	kind:function	line:48
+with_prefix	../src/ptb/util.py	/^def with_prefix(prefix, name):$/;"	kind:function	line:43
