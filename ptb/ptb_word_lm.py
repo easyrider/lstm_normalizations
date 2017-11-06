@@ -84,7 +84,7 @@ flags.DEFINE_string(
 	"A type of model. Possible options are: small, medium, large.")
 flags.DEFINE_string("data_path", "../Data/simple-examples/data/",
                     "Where the training/test data is stored.")
-flags.DEFINE_string("save_path", "/tmp/log/ptb/bn", "Model output directory.")
+flags.DEFINE_string("save_path", "/tmp/log/ptb/test", "Model output directory.")
 flags.DEFINE_bool("use_fp16", False,
                   "Train using 16-bit floats instead of 32bit floats")
 flags.DEFINE_integer("num_gpus", 1,
@@ -253,24 +253,13 @@ class PTBModel(object):
 			cell = tf.contrib.rnn.DropoutWrapper(
 				cell, output_keep_prob=config.keep_prob)
 
-		# cell = tf.contrib.rnn.MultiRNNCell(
-		# 	[cell for _ in range(config.num_layers)], state_is_tuple=True)
-
-		# self._initial_state = cell.zero_state(config.batch_size, data_type())
-		self._initial_state = (tf.truncated_normal(
-			[config.batch_size, config.hidden_size], stddev=0.1), tf.truncated_normal(
-			[config.batch_size, config.hidden_size], stddev=0.1), tf.constant(
-			0.0, shape=[1]))
-
-		state = self._initial_state
-		# Simplified version of tensorflow_models/tutorials/rnn/rnn.py's rnn().
-		# This builds an unrolled LSTM for tutorial purposes only.
-		# In general, use the rnn() or state_saving_rnn() from rnn.py.
-		#
-		# The alternative version of the code below is:
-		#
-		inputs = tf.unstack(inputs, num=self.num_steps, axis=1)
-		# outputs, state = tf.contrib.rnn.static_rnn(cell, inputs, initial_state=state)
+		cell = tf.contrib.rnn.MultiRNNCell(
+			[cell for _ in range(config.num_layers)], state_is_tuple=True)
+		if config.rnn_mode != BNLSTMCell:
+			self._initial_state = cell.zero_state(config.batch_size, data_type())
+			inputs = tf.unstack(inputs, num=self.num_steps, axis=1)
+			state = self._initial_state
+			outputs, state = tf.contrib.rnn.static_rnn(cell, inputs, initial_state=state)
 		# outputs = []
 		# with tf.variable_scope("RNN"):
 		#     for time_step in range(self.num_steps):
@@ -278,8 +267,15 @@ class PTBModel(object):
 		#         (cell_output, state) = cell(inputs[:, time_step, :], state)
 		#         outputs.append(cell_output)
 
-		outputs, state = tf.nn.static_rnn(
-			cell, inputs, initial_state=state, dtype=tf.float32)
+		else:
+			self._initial_state = \
+				(tf.truncated_normal([config.batch_size, config.hidden_size], stddev=0.1),
+				 tf.truncated_normal([config.batch_size, config.hidden_size], stddev=0.1),
+				 tf.constant(0.0, shape=[1]))
+
+			state = self._initial_state
+			outputs, state = tf.nn.static_rnn(cell, inputs, initial_state=state, dtype=tf.float32)
+
 		output = tf.reshape(tf.concat(outputs, 1), [-1, config.hidden_size])
 		return output, state
 
