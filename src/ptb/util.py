@@ -25,18 +25,31 @@ from tensorflow.core.protobuf import rewriter_config_pb2
 FLAGS = tf.flags.FLAGS
 
 
-def export_state_tuples(state_tuples, name):
-	for state_tuple in state_tuples:
-		tf.add_to_collection(name, state_tuple.c)
-		tf.add_to_collection(name, state_tuple.h)
+def export_state_tuples(state_tuples, name, mode):
+	if mode != 'bn_sep':
+		for state_tuple in state_tuples:
+			tf.add_to_collection(name, state_tuple.c)
+			tf.add_to_collection(name, state_tuple.h)
+	else:
+		for state_tuple in state_tuples:
+			tf.add_to_collection(name, state_tuple[0])
+			tf.add_to_collection(name, state_tuple[1])
+			tf.add_to_collection(name, state_tuple[2])
 
 
-def import_state_tuples(state_tuples, name, num_replicas):
+def import_state_tuples(state_tuples, name, num_replicas, mode):
 	restored = []
-	for i in range(len(state_tuples) * num_replicas):
-		c = tf.get_collection_ref(name)[2 * i + 0]
-		h = tf.get_collection_ref(name)[2 * i + 1]
-		restored.append(tf.contrib.rnn.LSTMStateTuple(c, h))
+	if mode != 'bn_sep':
+		for i in range(len(state_tuples) * num_replicas):
+			c = tf.get_collection_ref(name)[2 * i + 0]
+			h = tf.get_collection_ref(name)[2 * i + 1]
+			restored.append(tf.contrib.rnn.LSTMStateTuple(c, h))
+	else:
+		for i in range(len(state_tuples) * num_replicas):
+			c = tf.get_collection_ref(name)[3 * i + 0]
+			h = tf.get_collection_ref(name)[3 * i + 1]
+			step = tf.get_collection_ref(name)[3 * i + 1]
+			restored.append((c, h, step))
 	return tuple(restored)
 
 

@@ -150,6 +150,7 @@ class PTBModel(object):
 		self._cell = None
 		self.batch_size = input_.batch_size
 		self.num_steps = input_.num_steps
+		self.mode = config.rnn_mode
 		size = config.hidden_size
 		vocab_size = config.vocab_size
 
@@ -302,8 +303,8 @@ class PTBModel(object):
 			tf.add_to_collection(name, op)
 		self._initial_state_name = util.with_prefix(self._name, "initial")
 		self._final_state_name = util.with_prefix(self._name, "final")
-		util.export_state_tuples(self._initial_state, self._initial_state_name)
-		util.export_state_tuples(self._final_state, self._final_state_name)
+		util.export_state_tuples(self._initial_state, self._initial_state_name, self.mode)
+		util.export_state_tuples(self._final_state, self._final_state_name, self.mode)
 
 	def import_ops(self):
 		"""Imports ops from collections."""
@@ -326,9 +327,9 @@ class PTBModel(object):
 			util.with_prefix(self._name, "cost"))[0]
 		num_replicas = FLAGS.num_gpus if self._name == "Train" else 1
 		self._initial_state = util.import_state_tuples(
-			self._initial_state, self._initial_state_name, num_replicas)
+			self._initial_state, self._initial_state_name, num_replicas, self.mode)
 		self._final_state = util.import_state_tuples(
-			self._final_state, self._final_state_name, num_replicas)
+			self._final_state, self._final_state_name, num_replicas, self.mode)
 
 	@property
 	def input(self):
@@ -509,7 +510,7 @@ def main(_):
 	config = get_config()
 	eval_config = get_config()
 	eval_config.batch_size = 1
-	eval_config.num_steps = 20  # originally is 1
+	# eval_config.num_steps = 1  # originally is 1
 
 	with tf.Graph().as_default():
 		initializer = tf.random_uniform_initializer(-config.init_scale, config.init_scale)
