@@ -101,7 +101,7 @@ flags.DEFINE_string("rnn_mode", 'bn_sep',
                     "The low level implementation of lstm cell: one of CUDNN, "
                     "BASIC, and BLOCK, representing cudnn_lstm, basic_lstm, "
                     "and lstm_block_cell classes.")
-flags.DEFINE_float("lr", 0.0001, "learning rate")
+flags.DEFINE_float("lr", 1e-7, "learning rate")
 
 FLAGS = flags.FLAGS
 BASIC = "basic"
@@ -113,7 +113,6 @@ PCC_SEP = "pcc_sep"
 CN_SCALE_SEP = "cn_scale_sep"
 CUDNN = "cudnn"
 BLOCK = "block"
-
 cell_dic = {
 	BASIC: BASICLSTMCell,
 	BN_SEP: BNLSTMCell,
@@ -202,34 +201,35 @@ class PTBModel(object):
 		self._lr_update = tf.assign(self._lr, self._new_lr)
 
 	def _build_rnn_graph(self, inputs, config, is_training):
-		if config.rnn_mode == CUDNN:
-			return self._build_rnn_graph_cudnn(inputs, config, is_training)
-		else:
-			return self._build_rnn_graph_lstm(inputs, config, is_training)
+		# if config.rnn_mode == CUDNN:
+		# 	return self._build_rnn_graph_cudnn(inputs, config, is_training)
+		# else:
+		# 	return self._build_rnn_graph_lstm(inputs, config, is_training)
+		return self._build_rnn_graph_lstm(inputs, config, is_training)
 
-	def _build_rnn_graph_cudnn(self, inputs, config, is_training):
-		"""Build the inference graph using CUDNN cell."""
-		inputs = tf.transpose(inputs, [1, 0, 2])
-		self._cell = tf.contrib.cudnn_rnn.CudnnLSTM(
-			num_layers=config.num_layers,
-			num_units=config.hidden_size,
-			input_size=config.hidden_size,
-			dropout=1 - config.keep_prob if is_training else 0)
-		params_size_t = self._cell.params_size()
-		self._rnn_params = tf.get_variable(
-			"lstm_params",
-			initializer=tf.random_uniform([params_size_t], -config.init_scale,
-			                              config.init_scale),
-			validate_shape=False)
-		c = tf.zeros([config.num_layers, self.batch_size, config.hidden_size],
-		             tf.float32)
-		h = tf.zeros([config.num_layers, self.batch_size, config.hidden_size],
-		             tf.float32)
-		self._initial_state = (tf.contrib.rnn.LSTMStateTuple(h=h, c=c),)
-		outputs, h, c = self._cell(inputs, h, c, self._rnn_params, is_training)
-		outputs = tf.transpose(outputs, [1, 0, 2])
-		outputs = tf.reshape(outputs, [-1, config.hidden_size])
-		return outputs, (tf.contrib.rnn.LSTMStateTuple(h=h, c=c),)
+	# def _build_rnn_graph_cudnn(self, inputs, config, is_training):
+	# 	"""Build the inference graph using CUDNN cell."""
+	# 	inputs = tf.transpose(inputs, [1, 0, 2])
+	# 	self._cell = tf.contrib.cudnn_rnn.CudnnLSTM(
+	# 		num_layers=config.num_layers,
+	# 		num_units=config.hidden_size,
+	# 		input_size=config.hidden_size,
+	# 		dropout=1 - config.keep_prob if is_training else 0)
+	# 	params_size_t = self._cell.params_size()
+	# 	self._rnn_params = tf.get_variable(
+	# 		"lstm_params",
+	# 		initializer=tf.random_uniform([params_size_t], -config.init_scale,
+	# 		                              config.init_scale),
+	# 		validate_shape=False)
+	# 	c = tf.zeros([config.num_layers, self.batch_size, config.hidden_size],
+	# 	             tf.float32)
+	# 	h = tf.zeros([config.num_layers, self.batch_size, config.hidden_size],
+	# 	             tf.float32)
+	# 	self._initial_state = (tf.contrib.rnn.LSTMStateTuple(h=h, c=c),)
+	# 	outputs, h, c = self._cell(inputs, h, c, self._rnn_params, is_training)
+	# 	outputs = tf.transpose(outputs, [1, 0, 2])
+	# 	outputs = tf.reshape(outputs, [-1, config.hidden_size])
+	# 	return outputs, (tf.contrib.rnn.LSTMStateTuple(h=h, c=c),)
 
 	def _get_lstm_cell(self, config, is_training):
 
@@ -280,9 +280,9 @@ class PTBModel(object):
 				(tf.truncated_normal([config.batch_size, config.hidden_size], stddev=0.1),
 				 tf.truncated_normal([config.batch_size, config.hidden_size], stddev=0.1),
 				 tf.constant(0.0, shape=[1]))
-
+			inputs = tf.unstack(inputs, num=self.num_steps, axis=1)
 			state = self._initial_state
-			outputs, state = tf.nn.static_rnn(cell, inputs, initial_state=state, dtype=tf.float32)
+			outputs, state = tf.contrib.rnn.static_rnn(cell, inputs, initial_state=state, dtype=tf.float32)
 
 		output = tf.reshape(tf.concat(outputs, 1), [-1, config.hidden_size])
 		return output, state
@@ -445,25 +445,46 @@ def run_epoch(session, model, eval_op=None, verbose=False):
 	}
 	if eval_op is not None:
 		fetches["eval_op"] = eval_op
+	feed_dict = {}
 
-	for step in range(model.input.epoch_size):
-		feed_dict = {}
-		for i, (c, h) in enumerate(model.initial_state):
-			feed_dict[c] = state[i].c
-			feed_dict[h] = state[i].h
+	if model.mode != BN_SEP:
+		for step_num in range(model.input.epoch_size):
+			for i, (c, h) in enumerate(model.initial_state):
+				feed_dict[c] = state[i].c
+				feed_dict[h] = state[i].h
 
-		vals = session.run(fetches, feed_dict)
-		cost = vals["cost"]
-		state = vals["final_state"]
+			vals = session.run(fetches, feed_dict)
+			cost = vals["cost"]
+			state = vals["final_state"]
 
-		costs += cost
-		iters += model.input.num_steps
+			costs += cost
+			iters += model.input.num_steps
 
-		if verbose and step % (model.input.epoch_size // 10) == 10:
-			print("%.3f perplexity: %.3f speed: %.0f wps" %
-			      (step * 1.0 / model.input.epoch_size, np.exp(costs / iters),
-			       iters * model.input.batch_size * max(1, FLAGS.num_gpus) /
-			       (time.time() - start_time)))
+			if verbose and step_num % (model.input.epoch_size // 10) == 10:
+				print("%.3f perplexity: %.3f speed: %.0f wps" %
+				      (step_num * 1.0 / model.input.epoch_size, np.exp(costs / iters),
+				       iters * model.input.batch_size * max(1, FLAGS.num_gpus) /
+				       (time.time() - start_time)))
+
+	else:
+		for step_num in range(model.input.epoch_size):
+			for i, (c, h, step) in enumerate(model.initial_state):
+				feed_dict[c] = state[i][0]
+				feed_dict[h] = state[i][1]
+				feed_dict[step] = state[i][2]
+
+			vals = session.run(fetches, feed_dict)
+			cost = vals["cost"]
+			state = vals["final_state"]
+
+			costs += cost
+			iters += model.input.num_steps
+
+			if verbose and step_num % (model.input.epoch_size // 10) == 10:
+				print("%.3f perplexity: %.3f speed: %.0f wps" %
+				      (step_num * 1.0 / model.input.epoch_size, np.exp(costs / iters),
+				       iters * model.input.batch_size * max(1, FLAGS.num_gpus) /
+				       (time.time() - start_time)))
 
 	return np.exp(costs / iters)
 
@@ -563,7 +584,7 @@ def main(_):
 		sv = tf.train.Supervisor(logdir=FLAGS.save_path)
 		config_proto = tf.ConfigProto(allow_soft_placement=soft_placement)
 		with sv.managed_session(config=config_proto) as session:
-			# session = tf_debug.DumpingDebugWrapperSession(session)
+			session = tf_debug.LocalCLIDebugWrapperSession(session)
 			for i in range(config.max_max_epoch):
 				lr_decay = config.lr_decay ** max(i + 1 - config.max_epoch, 0.0)
 				m.assign_lr(session, config.learning_rate * lr_decay)

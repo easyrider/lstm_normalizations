@@ -6,15 +6,17 @@ import argparse
 import sys
 
 import tensorflow as tf
-from normal_cells.lstm_bn_sep import BNLSTMCell
-from normal_cells.lstm_cn_scale_input import CNSCALELSTMCell
-from normal_cells.lstm_cn_sep import CNLSTMCell
-from normal_cells.lstm_ln_sep import LNLSTMCell
-from normal_cells.lstm_pcc_sep import PCCLSTMCell
-from normal_cells.lstm_wn_sep import WNLSTMCell
 from tensorflow.examples.tutorials.mnist import input_data
 
 from src.normal_cells.lstm_basic import BASICLSTMCell
+from src.normal_cells.lstm_bn_sep import BNLSTMCell
+from src.normal_cells.lstm_cn_scale_input import CNSCALELSTMCell
+from src.normal_cells.lstm_cn_sep import CNLSTMCell
+from src.normal_cells.lstm_ln_sep import LNLSTMCell
+from src.normal_cells.lstm_pcc_sep import PCCLSTMCell
+from src.normal_cells.lstm_wn_sep import WNLSTMCell
+
+
 
 # Training Parameters
 # learning_rate = 0.001
@@ -227,7 +229,7 @@ if __name__ == '__main__':
 	parser.add_argument(
 		'--data_dir',
 		type=str,
-		default='../data/MNIST',
+		default='../../data/MNIST',
 		help='Directory for storing input data')
 	parser.add_argument(
 		'--log_dir',
