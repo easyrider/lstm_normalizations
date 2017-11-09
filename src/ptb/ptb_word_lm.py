@@ -238,7 +238,10 @@ class PTBModel(object):
 				config.hidden_size, forget_bias=0.0)
 
 		if config.rnn_mode == BN_SEP:
-			return cell_dic[BN_SEP](config.hidden_size, is_training, config.num_steps)
+			return cell_dic[BN_SEP](config.hidden_size,
+			                        is_training,
+			                        self.num_steps,
+			                        forget_bias=0.0, )
 		else:
 
 			return cell_dic[config.rnn_mode](
@@ -263,11 +266,11 @@ class PTBModel(object):
 		cell = tf.contrib.rnn.MultiRNNCell(
 			[cell for _ in range(config.num_layers)], state_is_tuple=True)
 
-		if config.rnn_mode != BNLSTMCell:
-			self._initial_state = cell.zero_state(config.batch_size, data_type())
-			inputs = tf.unstack(inputs, num=self.num_steps, axis=1)
-			state = self._initial_state
-			outputs, state = tf.contrib.rnn.static_rnn(cell, inputs, initial_state=state)
+		# if config.rnn_mode != BNLSTMCell:
+		# 	self._initial_state = cell.zero_state(config.batch_size, data_type())
+		# 	inputs = tf.unstack(inputs, num=self.num_steps, axis=1)
+		# 	state = self._initial_state
+		# 	outputs, state = tf.contrib.rnn.static_rnn(cell, inputs, initial_state=state)
 		# outputs = []
 		# with tf.variable_scope("RNN"):
 		#     for time_step in range(self.num_steps):
@@ -275,16 +278,21 @@ class PTBModel(object):
 		#         (cell_output, state) = cell(inputs[:, time_step, :], state)
 		#         outputs.append(cell_output)
 
-		else:
-			self._initial_state = \
-				(tf.truncated_normal([config.batch_size, config.hidden_size], stddev=0.1),
-				 tf.truncated_normal([config.batch_size, config.hidden_size], stddev=0.1),
-				 tf.constant(0.0, shape=[1]))
-			inputs = tf.unstack(inputs, num=self.num_steps, axis=1)
-			state = self._initial_state
-			outputs, state = tf.contrib.rnn.static_rnn(cell, inputs, initial_state=state, dtype=tf.float32)
+		# else:
+		# 	self._initial_state = \
+		# 		(tf.truncated_normal([config.batch_size, config.hidden_size], stddev=0.1),
+		# 		 tf.truncated_normal([config.batch_size, config.hidden_size], stddev=0.1),
+		# 		 tf.constant(0.0, shape=[1]))
+		# 	inputs = tf.unstack(inputs, num=self.num_steps, axis=1)
+		# 	state = self._initial_state
+		# 	outputs, state = tf.contrib.rnn.static_rnn(cell, inputs, initial_state=state, dtype=tf.float32)
 
+		self._initial_state = cell.zero_state(config.batch_size, data_type())
+		inputs = tf.unstack(inputs, num=self.num_steps, axis=1)
+		state = self._initial_state
+		outputs, state = tf.contrib.rnn.static_rnn(cell, inputs, initial_state=state)
 		output = tf.reshape(tf.concat(outputs, 1), [-1, config.hidden_size])
+
 		return output, state
 
 	def assign_lr(self, session, lr_value):
@@ -479,7 +487,7 @@ def run_epoch(session, model, eval_op=None, verbose=False):
 
 			costs += cost
 			iters += model.input.num_steps
-
+			print('cost: ' + str(cost))
 			if verbose and step_num % (model.input.epoch_size // 10) == 10:
 				print("%.3f perplexity: %.3f speed: %.0f wps" %
 				      (step_num * 1.0 / model.input.epoch_size, np.exp(costs / iters),
@@ -584,7 +592,7 @@ def main(_):
 		sv = tf.train.Supervisor(logdir=FLAGS.save_path)
 		config_proto = tf.ConfigProto(allow_soft_placement=soft_placement)
 		with sv.managed_session(config=config_proto) as session:
-			session = tf_debug.LocalCLIDebugWrapperSession(session)
+			# session = tf_debug.LocalCLIDebugWrapperSession(session)
 			for i in range(config.max_max_epoch):
 				lr_decay = config.lr_decay ** max(i + 1 - config.max_epoch, 0.0)
 				m.assign_lr(session, config.learning_rate * lr_decay)
