@@ -144,7 +144,7 @@ def cosine_norm(x, w, name='cosine_norm'):
 
 			gamma = tf.get_variable(
 				name + '_gamma', [cos_mat.get_shape().as_list()[1]],
-				initializer=tf.constant_initializer(5.0))
+				initializer=tf.truncated_normal_initializer(5.0))
 
 			return gamma * cos_mat
 

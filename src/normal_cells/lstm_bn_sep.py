@@ -48,7 +48,7 @@ class BNLSTMCell(RNNCell):
 
 			scale = tf.get_variable(
 				'scale', [size],
-				initializer=tf.constant_initializer(self._initial_scale))
+				initializer=tf.truncated_normal_initializer(self._initial_scale))
 			if no_offset:
 				offset = 0
 			elif set_forget_gate_bias:
