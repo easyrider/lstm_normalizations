@@ -12,7 +12,7 @@ class BNLSTMCell(RNNCell):
 	             is_training_tensor,
 	             max_bn_steps,
 	             forget_bias=1.0,
-	             initial_scale=0.1,
+	             initial_scale=0.1,  # TODO: test 0.01
 	             activation=tf.tanh,
 	             decay=0.95):
 		"""
