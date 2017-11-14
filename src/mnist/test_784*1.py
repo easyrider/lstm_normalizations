@@ -4,17 +4,20 @@ from __future__ import print_function
 
 import argparse
 import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.dirname(__file__) + '/' + '..'))
+from normal_cells.lstm_bn_sep import BNLSTMCell
+from normal_cells.lstm_cn_scale_input import CNSCALELSTMCell
+from normal_cells.lstm_cn_sep import CNLSTMCell
+from normal_cells.lstm_ln_sep import LNLSTMCell
+from normal_cells.lstm_pcc_sep import PCCLSTMCell
+from normal_cells.lstm_wn_sep import WNLSTMCell
+from normal_cells.lstm_basic import BASICLSTMCell
 
 import tensorflow as tf
-from src.normal_cells.lstm_bn_sep import BNLSTMCell
-from src.normal_cells.lstm_cn_scale_input import CNSCALELSTMCell
-from src.normal_cells.lstm_cn_sep import CNLSTMCell
-from src.normal_cells.lstm_ln_sep import LNLSTMCell
-from src.normal_cells.lstm_pcc_sep import PCCLSTMCell
-from src.normal_cells.lstm_wn_sep import WNLSTMCell
 from tensorflow.examples.tutorials.mnist import input_data
 
-from src.normal_cells.lstm_basic import BASICLSTMCell
 
 # Training Parameters
 # learning_rate = 0.001
