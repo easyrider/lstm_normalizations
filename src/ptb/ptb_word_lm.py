@@ -61,8 +61,14 @@ from __future__ import print_function
 import sys
 import os
 
-sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
-# print(sys.path)
+sys.path.append(os.path.join(os.path.dirname(__file__) + '..','..'))
+from src.normal_cells.lstm_bn_sep import BNLSTMCell
+from src.normal_cells.lstm_cn_scale_input import CNSCALELSTMCell
+from src.normal_cells.lstm_cn_sep import CNLSTMCell
+from src.normal_cells.lstm_ln_sep import LNLSTMCell
+from src.normal_cells.lstm_pcc_sep import PCCLSTMCell
+from src.normal_cells.lstm_wn_sep import WNLSTMCell
+from src.normal_cells.lstm_basic import BASICLSTMCell
 
 import time
 import numpy as np
@@ -74,13 +80,6 @@ from src.ptb import util
 from tensorflow.python.client import device_lib
 from tensorflow.python import debug as tf_debug
 
-from src.normal_cells.lstm_basic import BASICLSTMCell
-from src.normal_cells.lstm_bn_sep import BNLSTMCell
-from src.normal_cells.lstm_cn_scale_input import CNSCALELSTMCell
-from src.normal_cells.lstm_cn_sep import CNLSTMCell
-from src.normal_cells.lstm_ln_sep import LNLSTMCell
-from src.normal_cells.lstm_pcc_sep import PCCLSTMCell
-from src.normal_cells.lstm_wn_sep import WNLSTMCell
 
 flags = tf.flags
 logging = tf.logging
@@ -88,7 +87,7 @@ logging = tf.logging
 flags.DEFINE_string(
 	"model", "small",
 	"A type of model. Possible options are: small, medium, large.")
-flags.DEFINE_string("data_path", "../../data/simple-examples/data/",
+flags.DEFINE_string("data_path", "../data/simple-examples/data/",
                     "Where the training/test data is stored.")
 flags.DEFINE_string("save_path", "/tmp/log/ptb/bn", "Model output directory.")
 flags.DEFINE_bool("use_fp16", False,
@@ -101,7 +100,7 @@ flags.DEFINE_string("rnn_mode", 'bn_sep',
                     "The low level implementation of lstm cell: one of CUDNN, "
                     "BASIC, and BLOCK, representing cudnn_lstm, basic_lstm, "
                     "and lstm_block_cell classes.")
-flags.DEFINE_float("lr", 1e-7, "learning rate")
+flags.DEFINE_float("lr", 1e-2, "learning rate")
 
 FLAGS = flags.FLAGS
 BASIC = "basic"

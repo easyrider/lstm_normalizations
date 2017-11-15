@@ -1,0 +1,95 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+EOS_ID	../data_utils.py	/^EOS_ID = 2$/;"	kind:variable	line:40
+FLAGS	../translate.py	/^FLAGS = tf.app.flags.FLAGS$/;"	kind:variable	line:77
+GO_ID	../data_utils.py	/^GO_ID = 1$/;"	kind:variable	line:39
+PAD_ID	../data_utils.py	/^PAD_ID = 0$/;"	kind:variable	line:38
+Seq2SeqModel	../seq2seq_model.py	/^class Seq2SeqModel(object):$/;"	kind:class	line:31
+UNK_ID	../data_utils.py	/^UNK_ID = 3$/;"	kind:variable	line:41
+_DIGIT_RE	../data_utils.py	/^_DIGIT_RE = re.compile(br"\\d")$/;"	kind:variable	line:45
+_EOS	../data_utils.py	/^_EOS = b"_EOS"$/;"	kind:variable	line:34
+_GO	../data_utils.py	/^_GO = b"_GO"$/;"	kind:variable	line:33
+_PAD	../data_utils.py	/^_PAD = b"_PAD"$/;"	kind:variable	line:32
+_START_VOCAB	../data_utils.py	/^_START_VOCAB = [_PAD, _GO, _EOS, _UNK]$/;"	kind:variable	line:36
+_UNK	../data_utils.py	/^_UNK = b"_UNK"$/;"	kind:variable	line:35
+_WMT_ENFR_DEV_URL	../data_utils.py	/^_WMT_ENFR_DEV_URL = "http:\/\/www.statmt.org\/wmt15\/dev-v2.tgz"$/;"	kind:variable	line:49
+_WMT_ENFR_TRAIN_URL	../data_utils.py	/^_WMT_ENFR_TRAIN_URL = "http:\/\/www.statmt.org\/wmt10\/training-giga-fren.tar"$/;"	kind:variable	line:48
+_WORD_SPLIT	../data_utils.py	/^_WORD_SPLIT = re.compile(b"([.,!?\\"':;)(])")$/;"	kind:variable	line:44
+__init__	../seq2seq_model.py	/^  def __init__(self,$/;"	kind:member	line:46
+__init__.py	../__init__.py	1;"	kind:file	line:1
+_buckets	../translate.py	/^_buckets = [(5, 10), (10, 15), (20, 25), (40, 50)]$/;"	kind:variable	line:81
+absolute_import	../__init__.py	/^from __future__ import absolute_import$/;"	kind:namespace	line:17
+absolute_import	../data_utils.py	/^from __future__ import absolute_import$/;"	kind:namespace	line:17
+absolute_import	../seq2seq_model.py	/^from __future__ import absolute_import$/;"	kind:namespace	line:18
+absolute_import	../translate.py	/^from __future__ import absolute_import$/;"	kind:namespace	line:30
+basic_tokenizer	../data_utils.py	/^def basic_tokenizer(sentence):$/;"	kind:function	line:106
+builtin	../seq2seq_model.py	/^from six.moves import xrange  # pylint: disable=redefined-builtin$/;"	kind:namespace	line:25
+builtin	../translate.py	/^from six.moves import xrange  # pylint: disable=redefined-builtin$/;"	kind:namespace	line:42
+create_model	../translate.py	/^def create_model(session, forward_only):$/;"	kind:function	line:122
+create_vocabulary	../data_utils.py	/^def create_vocabulary(vocabulary_path, data_path, max_vocabulary_size,$/;"	kind:function	line:114
+data_to_token_ids	../data_utils.py	/^def data_to_token_ids(data_path, target_path, vocabulary_path,$/;"	kind:function	line:216
+data_utils	../__init__.py	/^import data_utils$/;"	kind:namespace	line:21
+data_utils	../seq2seq_model.py	/^import data_utils$/;"	kind:namespace	line:28
+data_utils	../translate.py	/^import data_utils$/;"	kind:namespace	line:45
+data_utils.py	../data_utils.py	1;"	kind:file	line:1
+decode	../translate.py	/^def decode():$/;"	kind:function	line:245
+disable	../seq2seq_model.py	/^from six.moves import xrange  # pylint: disable=redefined-builtin$/;"	kind:namespace	line:25
+disable	../translate.py	/^from six.moves import xrange  # pylint: disable=redefined-builtin$/;"	kind:namespace	line:42
+division	../__init__.py	/^from __future__ import division$/;"	kind:namespace	line:18
+division	../data_utils.py	/^from __future__ import division$/;"	kind:namespace	line:18
+division	../seq2seq_model.py	/^from __future__ import division$/;"	kind:namespace	line:19
+division	../translate.py	/^from __future__ import division$/;"	kind:namespace	line:31
+get_batch	../seq2seq_model.py	/^  def get_batch(self, data, bucket_id):$/;"	kind:member	line:257
+get_wmt_enfr_dev_set	../data_utils.py	/^def get_wmt_enfr_dev_set(directory):$/;"	kind:function	line:89
+get_wmt_enfr_train_set	../data_utils.py	/^def get_wmt_enfr_train_set(directory):$/;"	kind:function	line:75
+gfile	../data_utils.py	/^from tensorflow.python.platform import gfile$/;"	kind:namespace	line:28
+gunzip_file	../data_utils.py	/^def gunzip_file(gz_path, new_path):$/;"	kind:function	line:66
+gzip	../data_utils.py	/^import gzip$/;"	kind:namespace	line:21
+initialize_vocabulary	../data_utils.py	/^def initialize_vocabulary(vocabulary_path):$/;"	kind:function	line:157
+logging	../translate.py	/^import logging$/;"	kind:namespace	line:39
+main	../translate.py	/^def main(_):$/;"	kind:function	line:313
+math	../translate.py	/^import math$/;"	kind:namespace	line:34
+maybe_download	../data_utils.py	/^def maybe_download(directory, filename, url):$/;"	kind:function	line:52
+np	../seq2seq_model.py	/^import numpy as np$/;"	kind:namespace	line:24
+np	../translate.py	/^import numpy as np$/;"	kind:namespace	line:41
+os	../data_utils.py	/^import os$/;"	kind:namespace	line:22
+os	../translate.py	/^import os$/;"	kind:namespace	line:35
+prepare_data	../data_utils.py	/^def prepare_data(data_dir, from_train_path, to_train_path, from_dev_path, to_dev_path, from_vocabulary_size,$/;"	kind:function	line:278
+prepare_wmt_data	../data_utils.py	/^def prepare_wmt_data(data_dir, en_vocabulary_size, fr_vocabulary_size, tokenizer=None):$/;"	kind:function	line:247
+print_function	../__init__.py	/^from __future__ import print_function$/;"	kind:namespace	line:19
+print_function	../data_utils.py	/^from __future__ import print_function$/;"	kind:namespace	line:19
+print_function	../seq2seq_model.py	/^from __future__ import print_function$/;"	kind:namespace	line:20
+print_function	../translate.py	/^from __future__ import print_function$/;"	kind:namespace	line:32
+pylint	../seq2seq_model.py	/^from six.moves import xrange  # pylint: disable=redefined-builtin$/;"	kind:namespace	line:25
+pylint	../translate.py	/^from six.moves import xrange  # pylint: disable=redefined-builtin$/;"	kind:namespace	line:42
+random	../seq2seq_model.py	/^import random$/;"	kind:namespace	line:22
+random	../translate.py	/^import random$/;"	kind:namespace	line:36
+re	../data_utils.py	/^import re$/;"	kind:namespace	line:23
+read_data	../translate.py	/^def read_data(source_path, target_path, max_size=None):$/;"	kind:function	line:84
+redefined	../seq2seq_model.py	/^from six.moves import xrange  # pylint: disable=redefined-builtin$/;"	kind:namespace	line:25
+redefined	../translate.py	/^from six.moves import xrange  # pylint: disable=redefined-builtin$/;"	kind:namespace	line:42
+sampled_loss	../seq2seq_model.py	/^      def sampled_loss(labels, logits):$/;"	kind:function	line:103
+self_test	../translate.py	/^def self_test():$/;"	kind:function	line:293
+sentence_to_token_ids	../data_utils.py	/^def sentence_to_token_ids(sentence, vocabulary,$/;"	kind:function	line:187
+seq2seq_f	../seq2seq_model.py	/^    def seq2seq_f(encoder_inputs, decoder_inputs, do_decode):$/;"	kind:function	line:132
+seq2seq_model	../__init__.py	/^import seq2seq_model$/;"	kind:namespace	line:22
+seq2seq_model	../translate.py	/^import seq2seq_model$/;"	kind:namespace	line:46
+seq2seq_model.py	../seq2seq_model.py	1;"	kind:file	line:1
+single_cell	../seq2seq_model.py	/^      def single_cell():$/;"	kind:function	line:125
+single_cell	../seq2seq_model.py	/^    def single_cell():$/;"	kind:function	line:122
+step	../seq2seq_model.py	/^  def step(self, session, encoder_inputs, decoder_inputs, target_weights,$/;"	kind:member	line:197
+sys	../translate.py	/^import sys$/;"	kind:namespace	line:37
+tarfile	../data_utils.py	/^import tarfile$/;"	kind:namespace	line:24
+tf	../data_utils.py	/^import tensorflow as tf$/;"	kind:namespace	line:29
+tf	../seq2seq_model.py	/^import tensorflow as tf$/;"	kind:namespace	line:26
+tf	../translate.py	/^import tensorflow as tf$/;"	kind:namespace	line:43
+time	../translate.py	/^import time$/;"	kind:namespace	line:38
+train	../translate.py	/^def train():$/;"	kind:function	line:147
+translate.py	../translate.py	1;"	kind:file	line:1
+urllib	../data_utils.py	/^from six.moves import urllib$/;"	kind:namespace	line:26
+xrange	../seq2seq_model.py	/^from six.moves import xrange  # pylint: disable=redefined-builtin$/;"	kind:namespace	line:25
+xrange	../translate.py	/^from six.moves import xrange  # pylint: disable=redefined-builtin$/;"	kind:namespace	line:42
