@@ -538,7 +538,7 @@ def main(_):
 	config = get_config()
 	eval_config = get_config()
 	eval_config.batch_size = 1
-	# eval_config.num_steps = 1  # originally is 1
+	eval_config.num_steps = 1  # originally is 1
 
 	with tf.Graph().as_default():
 		initializer = tf.random_uniform_initializer(-config.init_scale, config.init_scale)
