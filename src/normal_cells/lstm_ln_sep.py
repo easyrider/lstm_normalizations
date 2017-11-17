@@ -135,7 +135,7 @@ def layer_norm(inputs, epsilon=1e-7, scope=None):
 		scale = tf.get_variable(
 			'alpha',
 			shape=[inputs.get_shape()[1]],
-			initializer=tf.truncated_normal_initializer(0.1))  # TODO: test 0.1
+			initializer=tf.truncated_normal_initializer(1.0)) 
 		shift = tf.get_variable(
 			'beta',
 			shape=[inputs.get_shape()[1]],
