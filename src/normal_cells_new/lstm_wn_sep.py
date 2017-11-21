@@ -132,12 +132,7 @@ def weight_norm(x, V, scope='weight_norm'):
                 shape[1],
             ],
             dtype=tf.float32,
-            initializer=tf.truncated_normal_initializer(1.0))
-
-        # b = tf.get_variable(
-        #     name=scope + '_b',
-        #     shape=[shape[1]],
-        #     initializer=tf.zeros_initializer)
+            initializer=tf.truncated_normal_initializer(0.1))
 
         w = g * tf.nn.l2_normalize(V, 0)
 

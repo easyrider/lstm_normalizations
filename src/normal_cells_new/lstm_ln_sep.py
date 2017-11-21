@@ -39,32 +39,34 @@ class LNLSTMCell(RNNCell):
     def state_size(self):
         return self._num_units, self._num_units, 1
 
-        @property
-        def output_size(self):
-            return self._num_units
+    @property
+    def output_size(self):
+        return self._num_units
 
-        def call(self, inputs, state):
-            """Long short-term memory cell (LSTM)."""
-            sigmoid = math_ops.sigmoid
-            # Parameters of gates are concatenated into one multiply for efficiency.
-            c, h, step = state
-            _step = tf.squeeze(tf.gather(tf.cast(step, tf.int32), 0))
+    def call(self, inputs, state):
+        """Long short-term memory cell (LSTM)."""
+        sigmoid = math_ops.sigmoid
+        # Parameters of gates are concatenated into one multiply for efficiency.
+        c, h, step = state
+        _step = tf.squeeze(tf.gather(tf.cast(step, tf.int32), 0))
 
-            concat = self._line_sep(
-                [inputs, h], 4 * self._num_units, _step, bias=True)
+        concat = self._line_sep(
+            [inputs, h], 4 * self._num_units, _step, bias=False)
 
-            # i = input_gate, j = new_input, f = forget_gate, o = output_gate
-            i, j, f, o = array_ops.split(
-                value=concat, num_or_size_splits=4, axis=1)
+        # i = input_gate, j = new_input, f = forget_gate, o = output_gate
+        i, j, f, o = array_ops.split(
+            value=concat, num_or_size_splits=4, axis=1)
 
-            new_c = (c * sigmoid(f + self._forget_bias) +
-                     sigmoid(i) * self._activation(j))
-            ln_new_c = tf.cond(step < self._max_steps - 1,
-                               lambda: layer_norm(new_c, 'ln_new_c'),
-                               lambda: new_c)
-            new_h = self._activation(ln_new_c) * sigmoid(o)
+        new_c = (c * sigmoid(f + self._forget_bias) +
+                 sigmoid(i) * self._activation(j))
 
-            return new_h, (new_c, new_h, step + 1)
+        ln_new_c = tf.cond(_step < self._max_steps - 1,
+                           lambda: layer_norm(new_c, 'ln_new_c'),
+                           lambda: new_c)
+
+        new_h = self._activation(ln_new_c) * sigmoid(o)
+
+        return new_h, (new_c, new_h, step + 1)
 
     def _line_sep(self,
                   args,
@@ -111,7 +113,7 @@ class LNLSTMCell(RNNCell):
             hh = tf.matmul(h, W_hh)
 
             res = tf.cond(step < self._max_steps-1,
-              lambda: layer_norm(xh, scope='ln_xh') + layer_norm(hh, scope='ln_hh'),
+              lambda: layer_norm(xh, 'ln_xh') + layer_norm(hh, 'ln_hh'),
               lambda: xh + hh)
 
             if not bias:
@@ -129,7 +131,7 @@ class LNLSTMCell(RNNCell):
 
 
 # LN funcition
-def layer_norm(inputs, epsilon=1e-7, scope=None):
+def layer_norm(inputs, scope, epsilon=1e-7):
     # TODO: may be optimized
     mean, var = tf.nn.moments(inputs, [1], keep_dims=True)
     with tf.variable_scope(scope + 'LN'):

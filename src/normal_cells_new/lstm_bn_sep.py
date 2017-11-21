@@ -9,9 +9,9 @@ class BNLSTMCell(RNNCell):
 
     def __init__(self,
                  num_units,
-                 is_training_tensor,
                  max_bn_steps,
                  forget_bias=1.0,
+                 is_training_tensor=False,
                  initial_scale=0.1,
                  activation=tf.tanh,
                  decay=0.95):
