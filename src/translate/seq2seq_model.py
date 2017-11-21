@@ -26,6 +26,17 @@ import tensorflow as tf
 
 import data_utils
 
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__) + '..', '..'))
+from src.normal_cells.lstm_bn_sep import BNLSTMCell
+# from src.normal_cells.lstm_cn_scale_input import CNSCALELSTMCell
+from src.normal_cells.lstm_cn_sep import CNLSTMCell
+from src.normal_cells.lstm_ln_sep import LNLSTMCell
+# from src.normal_cells.lstm_pcc_sep import PCCLSTMCell
+from src.normal_cells.lstm_wn_sep import WNLSTMCell
+from src.normal_cells.lstm_basic import BASICLSTMCell
+
 
 class Seq2SeqModel(object):
     """Sequence-to-sequence model with attention and for multiple buckets.
@@ -52,7 +63,7 @@ class Seq2SeqModel(object):
                  batch_size,
                  learning_rate,
                  learning_rate_decay_factor,
-                 use_lstm=False,
+                 use_lstm=True,
                  num_samples=512,
                  forward_only=False,
                  dtype=tf.float32):

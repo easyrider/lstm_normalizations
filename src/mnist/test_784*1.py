@@ -7,13 +7,13 @@ import sys
 import os
 
 sys.path.append(os.path.abspath(os.path.dirname(__file__) + '/' + '..'))
-from normal_cells.lstm_bn_sep import BNLSTMCell
-from normal_cells.lstm_cn_scale_input import CNSCALELSTMCell
-from normal_cells.lstm_cn_sep import CNLSTMCell
-from normal_cells.lstm_ln_sep import LNLSTMCell
-from normal_cells.lstm_pcc_sep import PCCLSTMCell
-from normal_cells.lstm_wn_sep import WNLSTMCell
-from normal_cells.lstm_basic import BASICLSTMCell
+from normal_cells_new.lstm_bn_sep import BNLSTMCell
+from normal_cells_new.lstm_cn_scale_input import CNSCALELSTMCell
+from normal_cells_new.lstm_cn_sep import CNLSTMCell
+from normal_cells_new.lstm_ln_sep import LNLSTMCell
+from normal_cells_new.lstm_pcc_sep import PCCLSTMCell
+from normal_cells_new.lstm_wn_sep import WNLSTMCell
+from normal_cells_new.lstm_basic import BASICLSTMCell
 
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
@@ -73,34 +73,34 @@ def run():
 		# Unstack to get a list of 'timesteps' tensors of shape (batch_size, n_input)
 		x = tf.unstack(x, timesteps, 1)
 		# x = tf.convert_to_tensor(x)
-		if FLAGS.cell != 'bn_sep':
-			# Define a lstm cell with tensorflow
-			init_state = tf.contrib.rnn.LSTMStateTuple(
-				tf.truncated_normal([batch_size, num_hidden], stddev=0.1),
-				tf.truncated_normal([batch_size, num_hidden], stddev=0.1))
-			lstm_cell = cell_dic[FLAGS.cell](num_hidden, forget_bias=1.0)
+		# if FLAGS.cell != 'bn_sep':
+		# 	# Define a lstm cell with tensorflow
+		# 	init_state = tf.contrib.rnn.LSTMStateTuple(
+		# 		tf.truncated_normal([batch_size, num_hidden], stddev=0.1),
+		# 		tf.truncated_normal([batch_size, num_hidden], stddev=0.1))
+		# 	lstm_cell = cell_dic[FLAGS.cell](num_hidden, forget_bias=1.0)
 
-			# Get lstm cell output
-			outputs, states = tf.nn.static_rnn(
-				lstm_cell, x, initial_state=init_state, dtype=tf.float32)
+		# 	# Get lstm cell output
+		# 	outputs, states = tf.nn.static_rnn(
+		# 		lstm_cell, x, initial_state=init_state, dtype=tf.float32)
 
-			# Linear activation, using rnn inner loop last output
-			return tf.matmul(outputs[-1], weights) + biases
+		# 	# Linear activation, using rnn inner loop last output
+		# 	return tf.matmul(outputs[-1], weights) + biases
 
-		else:
-			init_state = (tf.truncated_normal(
-				[batch_size, num_hidden], stddev=0.1), tf.truncated_normal(
-				[batch_size, num_hidden], stddev=0.1), tf.constant(0.0, shape=[1]))
-			lstm_cell = BNLSTMCell(
-				num_hidden,
-				forget_bias=1.0,
-				max_bn_steps=FLAGS.max_steps,
-				is_training_tensor=training)
-			outputs, states = tf.nn.static_rnn(
-				lstm_cell, x, initial_state=init_state, dtype=tf.float32)
-			_, final_hidden, _ = states
+		# else:
+		init_state = (tf.truncated_normal(
+			[batch_size, num_hidden], stddev=0.1), tf.truncated_normal(
+			[batch_size, num_hidden], stddev=0.1), tf.constant(0.0, shape=[1]))
+		lstm_cell = cell_dic[FLAGS.cell](
+			num_hidden,
+			FLAGS.max_steps,
+			forget_bias=1.0,
+			is_training_tensor=training)
+		outputs, states = tf.nn.static_rnn(
+			lstm_cell, x, initial_state=init_state, dtype=tf.float32)
+		_, final_hidden, _ = states
 
-			return tf.matmul(final_hidden, weights) + biases
+		return tf.matmul(final_hidden, weights) + biases
 
 	logits = RNN(X, w, b)
 
@@ -219,7 +219,7 @@ if __name__ == '__main__':
 		type=str,
 		default='/tmp/logs/mnist/',
 		help='Summaries log directory')
-	parser.add_argument('--cell', type=str, default='bn_sep', help='RNN Cell')
+	parser.add_argument('--cell', type=str, default='cn_sep', help='RNN Cell')
 
 	FLAGS, unparsed = parser.parse_known_args()
 	tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
